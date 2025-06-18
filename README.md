@@ -8,7 +8,7 @@
 
 ### Major Categories of Integration of the Microfrontends in an application
 
-1. **Build-Time Integration**
+1. **Build-Time Integration** (client-side)
 
    Before the host app gets loaded in the browser, it gets access to MFE component.
 
@@ -18,13 +18,24 @@
 
    **Timeline 3**: The host app team install the MFE component as a dependency.
 
-   **Timeline 4**: The host app build includes the all the code for the  MFE component 
+   **Timeline 4**: The host app build includes the all the code for the  MFE component
+
+   - **Pros**: Easy to setup and understand.
+   - **Cons**: Host app has to be re-deployed every time MFE component is updated.Tightly coupling between Host app and MFE component.
    
-   
-3. **Run-Time Integration**
+3. **Run-Time Integration** (client-side)
 
    After the host gets app loaded in the browser, it gets access to the MFE component.
 
-4. **Server Integration**
+   **Timeline 1**: Engineering team develops the MFE component.
+
+   **Timeline 2**: MFE component deployed at some location (CDN).
+
+   **Timeline 3**: The host app include the MFE component from deployed link and executes it.
+   
+   - **Pros**: MFE component deployed independently and can available in multiple version.
+   - **Cons**: Tooling + Setup is complicated.
+
+5. **Server Integration**
 
    While sending down JS to load up the host app, a server decides on whether or not to include MFE component.  
